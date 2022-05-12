@@ -1,5 +1,5 @@
 export class PotterBookstore {
-    private potterBooks: number[] = [0, 0, 0, 0];
+    private potterBooks: number[] = [0, 0, 0, 0, 0];
     private oneBookPrice: number = 100;
 
     buy(bookIndex: number, count: number) {
@@ -46,6 +46,9 @@ export class PotterBookstore {
 
     get price() {
         let price: number = 0;
+
+        let fiveDistinct: number = this.getDistinct(5);
+        price += fiveDistinct * (this.oneBookPrice * 5 * 0.75);
 
         let fourDistinct: number = this.getDistinct(4);
         price += fourDistinct * (this.oneBookPrice * 4 * 0.8);
