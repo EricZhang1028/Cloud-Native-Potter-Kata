@@ -27,4 +27,11 @@ describe('PotterBookstore', () => {
     expect(pb.price).toBe(190);
   })
 
+  // buy one 'Episode 1' and two 'Episode 2'
+  test('buyOneEps1AndOneEps2', () => {
+    pb.buy(0, 1);
+    pb.buy(1, 2);
+    expect(pb.price).toBe(290);
+  })
+
 });
