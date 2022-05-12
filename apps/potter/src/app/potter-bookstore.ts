@@ -46,21 +46,12 @@ export class PotterBookstore {
 
     get price() {
         let price: number = 0;
+        let discount: number[] = [1, 0.95, 0.9, 0.8, 0.75];
 
-        let fiveDistinct: number = this.getDistinct(5);
-        price += fiveDistinct * (this.oneBookPrice * 5 * 0.75);
-
-        let fourDistinct: number = this.getDistinct(4);
-        price += fourDistinct * (this.oneBookPrice * 4 * 0.8);
-
-        let threeDistinct: number = this.getDistinct(3);
-        price += threeDistinct * (this.oneBookPrice * 3 * 0.9);
-
-        let twoDistinct: number = this.getDistinct(2);
-        price += twoDistinct * (this.oneBookPrice * 2 * 0.95);
-
-        let oneDistinct: number = this.getDistinct(1);
-        price += this.oneBookPrice * oneDistinct;
+        for(let i = this.potterBooks.length-1; i >= 0; i--) {
+            let distinct: number = this.getDistinct(i+1);
+            price += distinct * (this.oneBookPrice * (i+1) * discount[i]);
+        }
 
         return price;
     }
