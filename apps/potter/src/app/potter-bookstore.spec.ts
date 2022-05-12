@@ -16,14 +16,15 @@ describe('PotterBookstore', () => {
 
   // buy one 'Episode 1'
   test('buyOneEps1', () => {
-    expect(pb.buy(1)).toBe(100);
+    pb.buy(0, 1);
+    expect(pb.price).toBe(100);
   });
 
   // buy one 'Episode 1' and one 'Episode 2'
   test('buyOneEps1AndOneEps2', () => {
-    let p1: number = pb.buy(1);
-    let p2: number = pb.buy(2);
-    expect(p1+p2).toBe(190);
+    pb.buy(0, 1);
+    pb.buy(1, 1);
+    expect(pb.price).toBe(190);
   })
 
 });
