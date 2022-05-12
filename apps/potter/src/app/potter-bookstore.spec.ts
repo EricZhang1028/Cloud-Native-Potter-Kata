@@ -14,7 +14,7 @@ describe('PotterBookstore', () => {
   });
 
   test('buyOneBook', () => {
-    expect(pb.buy(1, 1)).toBe(100);
+    expect(pb.buy(1)).toBe(100);
   });
 
 });
