@@ -1,3 +1,4 @@
+![example branch parameter](https://github.com/EricZhang1028/Cloud-Native-Potter-Kata/actions/workflows/main.yml/badge.svg?branch=main)
 
 
 # PotterKata
