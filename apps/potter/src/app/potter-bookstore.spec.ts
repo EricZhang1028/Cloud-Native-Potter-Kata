@@ -27,18 +27,33 @@ describe('PotterBookstore', () => {
     expect(pb.price).toBe(190);
   })
 
-  // buy one 'Episode 1' and two 'Episode 2'
+  /* buy one 'Episode 1'
+  *      two 'Episode 2' */
   test('buyOneEps1AndOneEps2', () => {
     pb.buy(0, 1);
     pb.buy(1, 2);
     expect(pb.price).toBe(290);
   })
 
-  // buy one 'Episode 1' and two 'Episode 2' and one 'Episode3'
+  /* buy one 'Episode 1'
+   *     two 'Episode 2'
+   *     one 'Episode 3' */
   test('buyOneEps1AndOneEps2', () => {
     pb.buy(0, 1);
     pb.buy(1, 2);
     pb.buy(2, 1);
     expect(pb.price).toBe(370);
   })
+
+  /* buy one 'Episode 1'
+   *     two 'Episode 2'
+   *     one 'Episode 3' 
+   *     one 'Episode 4' */
+    test('buyOneEps1AndOneEps2', () => {
+      pb.buy(0, 1);
+      pb.buy(1, 2);
+      pb.buy(2, 1);
+      pb.buy(3, 1);
+      expect(pb.price).toBe(420);
+    })
 });
